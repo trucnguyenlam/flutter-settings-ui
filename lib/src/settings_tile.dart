@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:settings_ui/src/cupertino_settings_item.dart';
 
@@ -137,14 +137,14 @@ class SettingsTile extends StatelessWidget {
         value: switchValue!,
         activeColor: switchActiveColor,
         onChanged: enabled ? onToggle : null,
-        title: Text(
+        title: AutoSizeText(
           title,
           style: titleTextStyle,
           maxLines: titleMaxLines,
           overflow: TextOverflow.ellipsis,
         ),
         subtitle: subtitle != null
-            ? Text(
+            ? AutoSizeText(
                 subtitle!,
                 style: subtitleTextStyle,
                 maxLines: subtitleMaxLines,
@@ -154,9 +154,9 @@ class SettingsTile extends StatelessWidget {
       );
     } else {
       return ListTile(
-        title: Text(title, style: titleTextStyle),
+        title: AutoSizeText(title, style: titleTextStyle),
         subtitle: subtitle != null
-            ? Text(
+            ? AutoSizeText(
                 subtitle!,
                 style: subtitleTextStyle,
                 maxLines: subtitleMaxLines,

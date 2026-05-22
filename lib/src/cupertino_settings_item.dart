@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -102,7 +103,7 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
     final Widget titleSection;
 
     if (widget.subtitle == null) {
-      titleSection = Text(
+      titleSection = AutoSizeText(
         widget.label,
         overflow: TextOverflow.ellipsis,
         style: widget.labelTextStyle ??
@@ -117,13 +118,13 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
+          AutoSizeText(
             widget.label,
             overflow: TextOverflow.ellipsis,
             style: widget.labelTextStyle,
           ),
           const SizedBox(height: 2.5),
-          Text(
+          AutoSizeText(
             widget.subtitle!,
             maxLines: widget.subtitleMaxLines,
             overflow: TextOverflow.ellipsis,
@@ -131,7 +132,7 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
                 TextStyle(
                   fontSize: 12.0,
                   letterSpacing: -0.2,
-                ),
+          ),
           ),
         ],
       );
@@ -178,7 +179,7 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
                   top: 1.5,
                   end: 2.25,
                 ),
-                child: Text(
+                child: AutoSizeText(
                   widget.value!,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.end,

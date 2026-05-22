@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:settings_ui/src/abstract_section.dart';
 import 'package:settings_ui/src/cupertino_settings_section.dart';
@@ -55,7 +55,7 @@ class SettingsSection extends AbstractSection {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (title != null)
-            Text(
+            AutoSizeText(
               title!,
               style: titleTextStyle,
               maxLines: maxLines,
@@ -77,7 +77,7 @@ class SettingsSection extends AbstractSection {
       if (title != null)
         Padding(
           padding: titlePadding!,
-          child: Text(
+          child: AutoSizeText(
             title!,
             style: titleTextStyle ??
                 TextStyle(
