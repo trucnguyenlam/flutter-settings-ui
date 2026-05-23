@@ -118,21 +118,27 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          AutoSizeText(
-            widget.label,
-            overflow: TextOverflow.ellipsis,
-            style: widget.labelTextStyle,
+          Flexible(
+            flex: 1,
+            child: AutoSizeText(
+              widget.label,
+              overflow: TextOverflow.ellipsis,
+              style: widget.labelTextStyle,
+            ),
           ),
           const SizedBox(height: 2.5),
-          AutoSizeText(
-            widget.subtitle!,
-            maxLines: widget.subtitleMaxLines,
-            overflow: TextOverflow.ellipsis,
-            style: widget.subtitleTextStyle ??
-                TextStyle(
-                  fontSize: 12.0,
-                  letterSpacing: -0.2,
-          ),
+          Flexible(
+            flex: 1,
+            child: AutoSizeText(
+              widget.subtitle!,
+              maxLines: widget.subtitleMaxLines,
+              overflow: TextOverflow.ellipsis,
+              style: widget.subtitleTextStyle ??
+                  TextStyle(
+                    fontSize: 12.0,
+                    letterSpacing: -0.2,
+              ),
+            ),
           ),
         ],
       );
